@@ -9,7 +9,7 @@ A redesigned 2-page website for Funngro with SEO optimization and a full SEO Aud
 - **SEO Audit Report** → `funngro-seo-audit.html`
 
 ## Live Site
-🔗 https://afroz-19.github.io/funngro-website/funngro-company.html
+🔗 https://afroz-19.github.io/funngro-website/
 
 ## Project
 Funngro Website Revamp — Teenlancer Platform
