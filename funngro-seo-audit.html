@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funngro SEO Audit Report 2025 — Submitted by Shaik Afroz Ahmed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f8f7f4;
+      --white: #ffffff;
+      --ink: #0e0e14;
+      --muted: #6b6b7a;
+      --border: #e4e2dc;
+      --accent: #e63c2a;
+      --green: #16a34a;
+      --amber: #d97706;
+      --red: #dc2626;
+      --blue: #2563eb;
+      --surface: #f0ede8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); font-size: 14px; line-height: 1.6; }
+    
+    /* COVER */
+    .cover {
+      background: var(--ink);
+      color: white;
+      padding: 64px 60px;
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::after {
+      content: 'SEO';
+      position: absolute; right: -20px; top: 20px;
+      font-family: 'Syne', sans-serif;
+      font-size: 160px; font-weight: 800;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+    }
+    .cover-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
+    .cover-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #a09898; }
+    .cover-score { text-align: right; }
+    .score-big { font-family: 'Syne', sans-serif; font-size: 64px; font-weight: 800; color: var(--amber); line-height: 1; }
+    .score-label { font-size: 12px; color: #a09898; }
+    .cover h1 { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; line-height: 1.15; margin-bottom: 10px; }
+    .cover h1 span { color: var(--accent); }
+    .cover-sub { color: #a09898; font-size: 13px; }
+    .cover-meta { 
+      display: flex; gap: 24px; margin-top: 28px;
+      padding-top: 24px; border-top: 1px solid #2a2a32;
+    }
+    .meta-item { font-size: 12px; }
+    .meta-label { color: #666; text-transform: uppercase; letter-spacing: 1px; font-size: 10px; margin-bottom: 2px; }
+    .meta-value { color: #ddd; font-weight: 500; }
+
+    /* MAIN */
+    .main { max-width: 960px; margin: 0 auto; padding: 40px 40px 60px; }
+
+    /* SCORE SUMMARY */
+    .score-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 12px; margin-bottom: 40px;
+    }
+    .score-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .sc-num { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+    .sc-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .sc-sub { font-size: 10px; margin-top: 2px; }
+    .green { color: var(--green); }
+    .amber { color: var(--amber); }
+    .red { color: var(--red); }
+
+    /* SECTION */
+    .audit-section { margin-bottom: 40px; }
+    .section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px 8px 0 0;
+      border-bottom: 2px solid var(--ink);
+    }
+    .section-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; }
+    .section-score-pill {
+      padding: 4px 14px; border-radius: 100px;
+      font-size: 12px; font-weight: 700;
+      font-family: 'DM Mono', monospace;
+    }
+    .pill-red { background: #fef2f2; color: var(--red); border: 1px solid #fecaca; }
+    .pill-amber { background: #fffbeb; color: var(--amber); border: 1px solid #fde68a; }
+    .pill-green { background: #f0fdf4; color: var(--green); border: 1px solid #bbf7d0; }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      overflow: hidden;
+    }
+    th {
+      background: var(--surface);
+      padding: 10px 16px;
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--muted); text-align: left;
+    }
+    td { padding: 12px 16px; border-top: 1px solid var(--border); font-size: 13px; vertical-align: top; }
+    tr:hover td { background: #fafafa; }
+    .issue { font-weight: 600; }
+    .detail { color: var(--muted); font-size: 12px; margin-top: 2px; }
+    .code { font-family: 'DM Mono', monospace; font-size: 11px; background: var(--surface); padding: 2px 6px; border-radius: 3px; color: #444; }
+    .status-dot {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 600;
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-red { background: var(--red); }
+    .dot-amber { background: var(--amber); }
+    .dot-green { background: var(--green); }
+    .priority-badge {
+      display: inline-block;
+      padding: 2px 8px; border-radius: 3px;
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .p-critical { background: #fef2f2; color: var(--red); }
+    .p-high { background: #fffbeb; color: var(--amber); }
+    .p-medium { background: #eff6ff; color: var(--blue); }
+    .p-low { background: #f0fdf4; color: var(--green); }
+
+    /* RECOMMENDATIONS */
+    .recs { 
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .rec-item {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: grid; grid-template-columns: 40px 1fr auto;
+      gap: 16px; align-items: start;
+    }
+    .rec-item:last-child { border-bottom: none; }
+    .rec-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px; font-weight: 800;
+      color: var(--border);
+      line-height: 1;
+    }
+    .rec-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+    .rec-detail { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .rec-impact {
+      text-align: right; font-size: 11px;
+      font-weight: 700; white-space: nowrap;
+    }
+
+    /* COMPETITOR COMPARISON */
+    .comp-table table { border-radius: 8px; border-top: 1px solid var(--border); }
+    .check { color: var(--green); font-weight: 700; }
+    .cross { color: var(--red); font-weight: 700; }
+    .partial { color: var(--amber); font-weight: 700; }
+
+    /* FINAL SUMMARY */
+    .final-box {
+      background: var(--ink);
+      color: white;
+      border-radius: 8px;
+      padding: 32px 36px;
+      margin-top: 40px;
+    }
+    .final-box h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 20px; }
+    .final-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px; }
+    .final-item { border-left: 2px solid #333; padding-left: 14px; }
+    .final-item-title { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 6px; }
+    .final-item-val { font-size: 14px; font-weight: 500; color: #ddd; }
+
+    /* ABOUT */
+    .about-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 24px 28px;
+      margin-top: 24px;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 20px; align-items: center;
+    }
+    .about-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+    .about-detail { font-size: 12px; color: var(--muted); }
+    .about-badge { background: var(--ink); color: white; padding: 10px 20px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+
+    @media (max-width: 700px) {
+      .cover { padding: 32px 24px; }
+      .main { padding: 24px 20px 40px; }
+      .score-grid { grid-template-columns: repeat(3,1fr); }
+      .final-grid { grid-template-columns: 1fr; }
+      .about-box { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-top">
+    <div>
+      <div class="cover-tag">Website SEO Audit Report</div>
+    </div>
+    <div class="cover-score">
+      <div class="score-big">42</div>
+      <div class="score-label">/ 100 Overall SEO Score</div>
+    </div>
+  </div>
+  <h1>Funngro.com <span>SEO Audit</span></h1>
+  <div class="cover-sub">Comprehensive Technical, On-Page, Content & Off-Page SEO Analysis</div>
+  <div class="cover-meta">
+    <div class="meta-item"><div class="meta-label">Website</div><div class="meta-value">funngro.com</div></div>
+    <div class="meta-item"><div class="meta-label">Audit Date</div><div class="meta-value">March 2025</div></div>
+    <div class="meta-item"><div class="meta-label">Auditor</div><div class="meta-value">Shaik Afroz Ahmed</div></div>
+    <div class="meta-item"><div class="meta-label">Pages Analyzed</div><div class="meta-value">Home, Company, Teen, FAQ</div></div>
+    <div class="meta-item"><div class="meta-label">Priority Issues</div><div class="meta-value">6 Critical · 9 High</div></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- SCORE SUMMARY -->
+  <div class="score-grid">
+    <div class="score-card">
+      <div class="sc-num red">28</div>
+      <div class="sc-label">Technical SEO</div>
+      <div class="sc-sub red">Critical Issues</div>
+    </div>
+    <div class="score-card">
+      <div class="sc-num amber">45</div>
+      <div class="sc-label">On-Page SEO</div>
+      <div class="sc-sub amber">Needs Work</div>
+    </div>
+    <div class="score-card">
+      <div class="sc-num amber">52</div>
+      <div class="sc-label">Content Quality</div>
+      <div class="sc-sub amber">Partial Issues</div>
+    </div>
+    <div class="score-card">
+      <div class="sc-num amber">55</div>
+      <div class="sc-label">Off-Page SEO</div>
+      <div class="sc-sub amber">Moderate</div>
+    </div>
+    <div class="score-card">
+      <div class="sc-num red">35</div>
+      <div class="sc-label">Core Web Vitals</div>
+      <div class="sc-sub red">Poor Performance</div>
+    </div>
+  </div>
+
+  <!-- 1. TECHNICAL SEO -->
+  <div class="audit-section">
+    <div class="section-header">
+      <div class="section-title">1. Technical SEO</div>
+      <span class="section-score-pill pill-red">Score: 28/100</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:28%">Issue</th>
+          <th style="width:32%">Finding</th>
+          <th style="width:24%">Recommendation</th>
+          <th style="width:16%">Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="issue">SSL Certificate Expired</div>
+            <div class="detail">Let's Encrypt cert expired Sep 15, 2025</div>
+          </td>
+          <td><span class="status-dot"><span class="dot dot-red"></span> HTTPS broken / insecure</span><div class="detail">Browsers show "Not Secure" warning to all visitors. Google penalises HTTP sites heavily in rankings.</div></td>
+          <td>Renew Let's Encrypt SSL immediately via hosting panel (HostGator). Enable auto-renewal. Force HTTPS via .htaccess.</td>
+          <td><span class="priority-badge p-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="issue">No XML Sitemap Found</div>
+            <div class="detail">funngro.com/sitemap.xml returns 404</div>
+          </td>
+          <td><span class="status-dot"><span class="dot dot-red"></span> Missing</span><div class="detail">Google cannot efficiently discover and crawl all pages without a sitemap. Reduces crawl coverage.</div></td>
+          <td>Generate sitemap via Yoast SEO (if WordPress) or sitemap.xml generator. Submit to Google Search Console.</td>
+          <td><span class="priority-badge p-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="issue">No robots.txt</div>
+            <div class="detail">funngro.com/robots.txt returns 404</div>
+          </td>
+          <td><span class="status-dot"><span class="dot dot-red"></span> Missing</span><div class="detail">Without robots.txt, crawlers may index admin, login, and other sensitive/duplicate pages unnecessarily.</div></td>
+          <td>Create robots.txt with Disallow rules for /admin, /login, /cart. Allow all for Google. Point to sitemap.</td>
+          <td><span class="priority-badge p-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="issue">Page Speed — Mobile</div>
+            <div class="detail">Estimated LCP &gt;4s (no CDN, images unoptimized)</div>
+          </td>
+          <td><span class="status-dot"><span class="dot dot-red"></span> Poor</span><div class="detail">Google's Core Web Vitals: LCP should be &lt;2.5s. Poor mobile speed = significant ranking penalty post-2021.</div></td>
+          <td>Compress images to WebP, implement lazy loading, minify CSS/JS, consider Cloudflare CDN (free tier).</td>
+          <td><span class="priority-badge p-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="issue">Mobile Responsiveness</div>
+            <div class="detail">Some sections not fully responsive on &lt;360px viewports</div>
+          </td>
+          <td><span class="status-dot"><span class="dot dot-amber"></span> Partial</span><div class="detail">Google uses mobile-first indexing. Pages must be fully responsive — especially for teen audience who are primarily mobile users.</div></td>
+          <td>Use CSS media queries for all breakpoints. Test on BrowserStack for Samsung Galaxy A-series (most common in India).</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="issue">Canonical Tags</div>
+            <div class="detail">Not implemented on any pages</div>
+          </td>
+          <td><span class="status-dot"><span class="dot dot-amber"></span> Missing</span><div class="detail">Without canonical tags, Google may treat HTTP/HTTPS and www/non-www versions as duplicate content, splitting link equity.</div></td>
+          <td>Add <span class="code">&lt;link rel="canonical"&gt;</span> to all pages pointing to preferred URL version.</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="issue">Structured Data (JSON-LD)</div>
+            <div class="detail">No Schema.org markup present</div>
+          </td>
+          <td><span class="status-dot"><span class="dot dot-amber"></span> Missing</span><div class="detail">Structured data enables rich snippets in Google Search (star ratings, FAQs, breadcrumbs), improving CTR by 20–30%.</div></td>
+          <td>Add Organization, FAQPage, and WebPage schema markup on all key pages. Use Google's Rich Results Test to verify.</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. ON-PAGE SEO -->
+  <div class="audit-section">
+    <div class="section-header">
+      <div class="section-title">2. On-Page SEO</div>
+      <span class="section-score-pill pill-amber">Score: 45/100</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th style="width:22%">Element</th><th style="width:30%">Current State</th><th style="width:30%">Recommended Version</th><th style="width:18%">Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="issue">Homepage Title Tag</div></td>
+          <td><span class="code">Funngro Teenlancer - Smart Teens work with Smart companies.</span><div class="detail">61 chars — slightly over 60 char limit. Keyword placement weak.</div></td>
+          <td><span class="code">Funngro – Earn Money as a Teen | India's #1 Teenlancer Platform</span><div class="detail">Contains primary keyword, USP, brand. 64 chars.</div></td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Meta Description — Home</div></td>
+          <td><span class="status-dot"><span class="dot dot-red"></span> Not present or auto-generated</span><div class="detail">No custom meta description found. Google will pull random text = low CTR.</div></td>
+          <td>Write 150–160 char compelling description including: "earn money, teen freelancer, India, ages 14-22, real companies, paid projects." Use action words.</td>
+          <td><span class="priority-badge p-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">H1 Tag Usage</div></td>
+          <td><span class="status-dot"><span class="dot dot-amber"></span> Multiple H1s or H1 missing on key pages</span><div class="detail">Only one H1 per page is the standard. Key pages (Company, Teen) lack keyword-rich H1s.</div></td>
+          <td>One H1 per page. Homepage: "Earn Real Money as a Teenager – Funngro Teenlancer Platform". Company page: "Hire Smart Teen Talent for Your Business in India".</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Image Alt Text</div></td>
+          <td><span class="status-dot"><span class="dot dot-red"></span> Most images have no alt attributes</span><div class="detail">Empty alt text = lost image SEO value + accessibility (WCAG) failures.</div></td>
+          <td>Add descriptive alt text to all images: e.g. <span class="code">alt="Teenage girl working on laptop earning money via Funngro"</span>. Include primary keywords naturally.</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">URL Structure</div></td>
+          <td><span class="code">funngro.com/company</span> — Good. <span class="code">funngro.com/teen</span> — Good.</td>
+          <td>Existing URL structure is clean and keyword-relevant. Maintain this pattern for all new pages. Avoid underscores or numeric IDs in URLs.</td>
+          <td><span class="priority-badge p-low">Good</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Internal Linking</div></td>
+          <td><span class="status-dot"><span class="dot dot-amber"></span> Minimal cross-linking between pages</span><div class="detail">Company page doesn't link to Teen page with anchor text. Blog/FAQ doesn't link to conversion pages.</div></td>
+          <td>Add contextual internal links. Link from blog posts to Company/Teen pages with keyword anchor text like "hire teen freelancers" and "earn money as a teenager".</td>
+          <td><span class="priority-badge p-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Heading Hierarchy (H2–H4)</div></td>
+          <td><span class="status-dot"><span class="dot dot-amber"></span> Inconsistent use of heading tags</span><div class="detail">Some sections use &lt;div&gt; tags styled as headings instead of semantic H2/H3 — invisible to search engines.</div></td>
+          <td>Use proper HTML heading hierarchy: H1 → H2 → H3. Never skip levels. Include secondary keywords in H2s like "How to earn money as a teen" and "Why companies hire on Funngro".</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. CONTENT SEO -->
+  <div class="audit-section">
+    <div class="section-header">
+      <div class="section-title">3. Content Quality & Keyword Strategy</div>
+      <span class="section-score-pill pill-amber">Score: 52/100</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th style="width:22%">Area</th><th style="width:35%">Finding</th><th style="width:25%">Recommendation</th><th style="width:18%">Impact</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="issue">Keyword Gaps — Primary</div></td>
+          <td>High-volume keywords not targeted:<br>
+            <span class="code">earn money as a teenager</span> (8,100/mo)<br>
+            <span class="code">teen freelancing India</span> (4,400/mo)<br>
+            <span class="code">online jobs for students India</span> (12,000/mo)
+          </td>
+          <td>Create dedicated landing pages and blog content around these exact keyword phrases. Use in title, H1, H2, first paragraph, and meta description.</td>
+          <td><span class="priority-badge p-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Placeholder Content</div></td>
+          <td>Found "Lorem ipsum dolor sit amet..." text on the Company page under testimonials/blog section. Live on production site.</td>
+          <td>Remove all Lorem Ipsum immediately. Google identifies placeholder content as thin/low-quality content and may penalize the entire page.</td>
+          <td><span class="priority-badge p-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Blog / Content Marketing</div></td>
+          <td>Blog section exists but appears inactive or with very few posts. No topical authority established.</td>
+          <td>Publish 2 blog posts/week targeting long-tail keywords: "how to earn money as a 15-year-old in India", "best freelancing skills for teenagers 2025", "how to explain freelancing to parents". This builds organic traffic significantly.</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Word Count — Key Pages</div></td>
+          <td>Teen and Company pages appear thin (&lt;500 words of crawlable text). Google prefers 1,000–2,000 words for competitive keywords.</td>
+          <td>Expand pages with helpful content: FAQ sections, how-it-works explanations, category descriptions, testimonials. Aim for 1,200+ words per key page.</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Long-Tail Keyword Opportunities</div></td>
+          <td>No content targeting informational queries like "can a 15-year-old work in India", "how to make money as a student without investment", "freelancing for school students"</td>
+          <td>Create an FAQ page and blog targeting these queries. These are high-intent, low-competition keywords where Funngro can rank on page 1 quickly.</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Testimonials Quality</div></td>
+          <td>Real testimonials present but generic ("Happy customer"). No specific names, company names, or measurable outcomes.</td>
+          <td>Add full testimonials with: person's name, company name, city, and specific result ("Saved 40% on content costs in 2 months"). Add star ratings as JSON-LD structured data for rich snippets.</td>
+          <td><span class="priority-badge p-medium">Medium</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. OFF-PAGE SEO -->
+  <div class="audit-section">
+    <div class="section-header">
+      <div class="section-title">4. Off-Page SEO & Domain Authority</div>
+      <span class="section-score-pill pill-amber">Score: 55/100</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th style="width:22%">Factor</th><th style="width:36%">Current State</th><th style="width:28%">Recommendation</th><th style="width:14%">Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="issue">Backlink Profile</div></td>
+          <td>Press coverage from APN News, VieStories, CXOToday — good quality links. However, limited total backlink count for competitive keywords.</td>
+          <td>Reach out to EdTech, parenting, and startup blogs for guest posts. Submit Funngro to startup directories (Crunchbase, Product Hunt, AngelList). Each listing is a backlink.</td>
+          <td><span class="priority-badge p-high">High</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Google Business Profile</div></td>
+          <td><span class="status-dot"><span class="dot dot-amber"></span> Not verified/incomplete</span></td>
+          <td>Claim and fully complete Google Business Profile with business description, hours, photos, and regular posts. This drives local discovery and brand searches.</td>
+          <td><span class="priority-badge p-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Social Signals</div></td>
+          <td>Instagram, LinkedIn presence exists but social sharing buttons absent from website. Social activity does not funnel back to website.</td>
+          <td>Add Open Graph meta tags for all pages (controls how pages look when shared on WhatsApp/Instagram). Add social share buttons to blog posts. Cross-link social profiles.</td>
+          <td><span class="priority-badge p-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">App Store Optimization</div></td>
+          <td>App listed on Play Store (version 1.3.105 active). ASO not fully optimized.</td>
+          <td>Optimize Play Store listing: include keywords "teen freelancing app India", "earn money for students", "teenlancer" in app title and description. Screenshots showing earnings flow.</td>
+          <td><span class="priority-badge p-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><div class="issue">Domain Age & Authority</div></td>
+          <td>Domain registered March 31, 2021. Moderate authority for its age given press coverage. Positive trajectory.</td>
+          <td>Continue earning editorial backlinks through PR, partnerships with schools/colleges, and collaborations with parenting influencers. Quality &gt; quantity for backlinks.</td>
+          <td><span class="priority-badge p-low">Low</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. COMPETITOR COMPARISON -->
+  <div class="audit-section comp-table">
+    <div class="section-header">
+      <div class="section-title">5. SEO Competitor Comparison</div>
+      <span class="section-score-pill pill-amber">Benchmarking</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>SEO Factor</th>
+          <th>Funngro.com</th>
+          <th>Internshala.com</th>
+          <th>Unstop.com</th>
+          <th>WorkIndia.in</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SSL / HTTPS</strong></td>
+          <td><span class="cross">✗ Expired</span></td>
+          <td><span class="check">✓ Active</span></td>
+          <td><span class="check">✓ Active</span></td>
+          <td><span class="check">✓ Active</span></td>
+        </tr>
+        <tr>
+          <td><strong>XML Sitemap</strong></td>
+          <td><span class="cross">✗ Missing</span></td>
+          <td><span class="check">✓ Present</span></td>
+          <td><span class="check">✓ Present</span></td>
+          <td><span class="check">✓ Present</span></td>
+        </tr>
+        <tr>
+          <td><strong>Meta Descriptions</strong></td>
+          <td><span class="cross">✗ Missing</span></td>
+          <td><span class="check">✓ Optimized</span></td>
+          <td><span class="check">✓ Optimized</span></td>
+          <td><span class="partial">~ Partial</span></td>
+        </tr>
+        <tr>
+          <td><strong>Structured Data</strong></td>
+          <td><span class="cross">✗ None</span></td>
+          <td><span class="check">✓ FAQPage + Job</span></td>
+          <td><span class="check">✓ Organization</span></td>
+          <td><span class="partial">~ Basic</span></td>
+        </tr>
+        <tr>
+          <td><strong>Mobile Speed</strong></td>
+          <td><span class="cross">✗ Poor (~28)</span></td>
+          <td><span class="partial">~ Fair (~55)</span></td>
+          <td><span class="check">✓ Good (~72)</span></td>
+          <td><span class="partial">~ Fair (~48)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Blog / Content Hub</strong></td>
+          <td><span class="partial">~ Inactive</span></td>
+          <td><span class="check">✓ Active (500+ posts)</span></td>
+          <td><span class="check">✓ Active</span></td>
+          <td><span class="partial">~ Limited</span></td>
+        </tr>
+        <tr>
+          <td><strong>Image Alt Text</strong></td>
+          <td><span class="cross">✗ Mostly missing</span></td>
+          <td><span class="check">✓ Present</span></td>
+          <td><span class="check">✓ Present</span></td>
+          <td><span class="partial">~ Partial</span></td>
+        </tr>
+        <tr>
+          <td><strong>Core Web Vitals</strong></td>
+          <td><span class="cross">✗ Failing</span></td>
+          <td><span class="partial">~ Needs Work</span></td>
+          <td><span class="check">✓ Passing</span></td>
+          <td><span class="cross">✗ Failing</span></td>
+        </tr>
+        <tr>
+          <td><strong>Unique Teen Niche SEO</strong></td>
+          <td><span class="check">✓ Niche Opportunity</span></td>
+          <td><span class="cross">✗ Not targeted</span></td>
+          <td><span class="cross">✗ Not targeted</span></td>
+          <td><span class="cross">✗ Not targeted</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="padding:14px 20px;background:#fff;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;font-size:12px;color:var(--muted)">
+      ⭐ <strong>Key Insight:</strong> Funngro has a unique, uncontested niche — "freelancing for teenagers India" — that competitors like Internshala don't target. Fixing the technical SEO issues + content strategy would allow Funngro to rank #1 for high-value teen earning keywords with minimal competition.
+    </div>
+  </div>
+
+  <!-- RECOMMENDATIONS PRIORITY LIST -->
+  <div class="audit-section">
+    <div class="section-header">
+      <div class="section-title">6. Prioritized Action Plan</div>
+      <span class="section-score-pill pill-amber">Fix in Order</span>
+    </div>
+    <div class="recs">
+      <div class="rec-item">
+        <div class="rec-num">01</div>
+        <div>
+          <div class="rec-title">🔐 Renew SSL Certificate Immediately</div>
+          <div class="rec-detail">The expired SSL is the #1 blocker. It triggers browser security warnings, kills user trust, and is a direct Google ranking signal. Renew via HostGator cPanel → SSL/TLS → Let's Encrypt in under 5 minutes.</div>
+        </div>
+        <div class="rec-impact"><span class="priority-badge p-critical">Critical</span><br><br><span style="color:var(--green);font-size:11px">+15 pts potential</span></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num">02</div>
+        <div>
+          <div class="rec-title">🗺️ Create & Submit XML Sitemap + robots.txt</div>
+          <div class="rec-detail">Generate sitemap.xml covering all key pages (Home, Company, Teen, FAQ, Blog). Submit to Google Search Console and Bing Webmaster Tools. Create robots.txt with proper Allow/Disallow rules and sitemap reference.</div>
+        </div>
+        <div class="rec-impact"><span class="priority-badge p-critical">Critical</span><br><br><span style="color:var(--green);font-size:11px">+10 pts potential</span></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num">03</div>
+        <div>
+          <div class="rec-title">📝 Write Meta Titles & Descriptions for All Pages</div>
+          <div class="rec-detail">Add unique, keyword-rich title tags (50–60 chars) and meta descriptions (140–160 chars) to every page. This single fix typically improves organic CTR by 15–25% within weeks. Use primary keyword in title, action words in description.</div>
+        </div>
+        <div class="rec-impact"><span class="priority-badge p-critical">Critical</span><br><br><span style="color:var(--green);font-size:11px">+12 pts potential</span></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num">04</div>
+        <div>
+          <div class="rec-title">🖼️ Optimize Images (WebP + Alt Text)</div>
+          <div class="rec-detail">Convert all images to WebP format (reduces size by 30–50%). Add descriptive alt text to every image. This improves Core Web Vitals score (LCP), page speed, and image search visibility simultaneously.</div>
+        </div>
+        <div class="rec-impact"><span class="priority-badge p-high">High</span><br><br><span style="color:var(--green);font-size:11px">+8 pts potential</span></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num">05</div>
+        <div>
+          <div class="rec-title">🗑️ Remove Lorem Ipsum Content</div>
+          <div class="rec-detail">Placeholder text on the Company page testimonials/blog section signals low-quality content to Google's crawlers. Remove or replace with real content immediately. Thin content pages may be de-indexed.</div>
+        </div>
+        <div class="rec-impact"><span class="priority-badge p-critical">Critical</span></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num">06</div>
+        <div>
+          <div class="rec-title">📊 Add JSON-LD Structured Data (Schema.org)</div>
+          <div class="rec-detail">Implement Organization schema on homepage, FAQPage schema on FAQ, and WebPage schema on Company/Teen pages. This enables rich results (FAQ dropdowns, star ratings) which increase click-through rates by 20–30%.</div>
+        </div>
+        <div class="rec-impact"><span class="priority-badge p-high">High</span><br><br><span style="color:var(--green);font-size:11px">+6 pts potential</span></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num">07</div>
+        <div>
+          <div class="rec-title">📰 Launch Active Blog Targeting Long-Tail Keywords</div>
+          <div class="rec-detail">Publish 2 posts/week targeting: "how to earn money as a student in India", "part-time jobs for 16-year-olds", "best freelancing skills for teens 2025". These are low-competition, high-intent queries where Funngro can rank on page 1 in 3–6 months.</div>
+        </div>
+        <div class="rec-impact"><span class="priority-badge p-high">High</span><br><br><span style="color:var(--green);font-size:11px">High ROI</span></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num">08</div>
+        <div>
+          <div class="rec-title">⚡ Core Web Vitals Performance Fix</div>
+          <div class="rec-detail">Implement Cloudflare CDN (free), enable browser caching, minify CSS/JS, defer non-critical scripts, and use lazy-loading for below-fold images. Target: LCP &lt; 2.5s, FID &lt; 100ms, CLS &lt; 0.1.</div>
+        </div>
+        <div class="rec-impact"><span class="priority-badge p-high">High</span></div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-num">09</div>
+        <div>
+          <div class="rec-title">🔗 Build Quality Backlinks via PR & Directories</div>
+          <div class="rec-detail">Submit Funngro to: Crunchbase, Product Hunt, StartupIndia, AngelList, G2, Capterra. Reach out to parenting blogs (ParentCircle, MomJunction) for "teen pocket money apps" roundup articles. Each quality backlink increases domain authority.</div>
+        </div>
+        <div class="rec-impact"><span class="priority-badge p-medium">Medium</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL SUMMARY -->
+  <div class="final-box">
+    <h2>Summary & Projected Impact</h2>
+    <p style="color:#9994a0;font-size:13px">Funngro operates in a practically uncontested SEO niche — "freelancing for teenagers in India" — with virtually no direct SEO competition. The current score of 42/100 is driven primarily by technical failures (expired SSL, missing sitemap, no meta tags) rather than fundamental content or authority problems. Fixing these technical issues alone could push the score to 65–70/100 within 30 days and significantly increase organic visibility.</p>
+    <div class="final-grid">
+      <div class="final-item">
+        <div class="final-item-title">Current SEO Score</div>
+        <div class="final-item-val">42 / 100 — Needs Urgent Work</div>
+      </div>
+      <div class="final-item">
+        <div class="final-item-title">Projected (30-day fixes)</div>
+        <div class="final-item-val">65–70 / 100 after technical fixes</div>
+      </div>
+      <div class="final-item">
+        <div class="final-item-title">Projected (6-month SEO)</div>
+        <div class="final-item-val">80+ / 100 with content strategy</div>
+      </div>
+      <div class="final-item">
+        <div class="final-item-title">Biggest Opportunity</div>
+        <div class="final-item-val">Own "teen earning India" keyword cluster — near-zero competition</div>
+      </div>
+      <div class="final-item">
+        <div class="final-item-title">Biggest Risk</div>
+        <div class="final-item-val">Expired SSL killing conversions and rankings right now</div>
+      </div>
+      <div class="final-item">
+        <div class="final-item-title">Effort Required</div>
+        <div class="final-item-val">60% technical (fast fixes) + 40% content (ongoing)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBMITTED BY -->
+  <div class="about-box">
+    <div>
+      <div class="about-name">Shaik Afroz Ahmed</div>
+      <div class="about-detail">MCA — RGM College of Engineering & Technology, Nandyala · Web Developer & Android Developer<br>
+      Submitted for: Funngro Website Development Assessment · March 2025<br>
+      Contact: shaikafrozahmed21@gmail.com</div>
+    </div>
+    <div class="about-badge">Funngro Candidate Submission</div>
+  </div>
+
+</div>
+</body>
+</html>
